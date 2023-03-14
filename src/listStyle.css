@@ -1,0 +1,81 @@
+/* List Style View */
+
+.heroSectionList {
+display:inline-block;
+justify-content: space-between;
+margin: 2rem 8rem 2rem 3rem;
+width: 49rem;
+height: 100%;
+background-color: white;
+}
+
+.totalPropertyInfoList{
+display: grid;
+grid-template-columns: 1fr;
+grid-gap: 5rem;
+max-width: 50rem;
+}
+
+.eachPropOuterList{
+    width: 0rem;
+    background: linear-gradient(153deg, rgb(129, 8, 242) 7%, rgba(103, 30, 172, 0.823) 43%, rgba(193, 32, 169, 0.785) 90%);
+    transition: all 0.5s ease-out;
+}
+
+.eachPropOuterList:hover{
+    opacity: 1;
+    left: 0;
+    align-items: center;
+    color: #f7f7efcf;
+    background: linear-gradient(153deg, rgb(129, 8, 242) 7%, rgba(103, 30, 172, 0.823) 43%, rgba(193, 32, 169, 0.785) 90%); 
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.05);
+    width: 100%;
+}
+
+.eachPropList{
+    display: flex;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 49rem;
+}
+
+
+.eachPropImageList{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+  .propertyImageList{
+  width: 18rem;
+  height: 12rem;
+  margin-right: 2rem;
+  border: 10px solid rgba(135, 206, 250, 0.096);
+  border-radius: 5px;
+  }
+
+  .hoverCardContainerList{
+    display: grid;
+    grid-gap: 1rem;
+  }
+  
+.eachPropPropNameList{
+ position: absolute;
+ bottom: 12px;
+ left: 20px;
+ color: white;
+ font-size: 14px;
+ font-weight: 500;
+}
+
+.eachPropInfoList{
+ margin: auto;
+}
+
+.eachPropInfoLocationList {
+font-weight: 500;
+font-size: 12px;
+}  
+

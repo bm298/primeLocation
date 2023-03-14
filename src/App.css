@@ -1,0 +1,588 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+img{
+  height: 200px;
+  width: 300px;
+}
+
+.container{
+}
+
+.navBar {
+  height: 80px;
+  background-color: rgb(1, 1, 56);
+  align-items: center;
+  display: grid;
+  color: white;
+}
+
+.navContents {
+  display: flex;
+  align-items: center;
+  margin: 0 8rem 0 4rem;
+  justify-content: space-between;
+}
+
+#logo{
+  font-size: 1rem;
+}
+
+ul{
+  display: flex; 
+  list-style-type: none;
+  gap: 2rem;
+}
+
+.navItems, li{
+
+}
+
+a{
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+#navItemsBtn{
+  background-color: rgb(255, 120, 152);
+  color: white; 
+  padding: 6px 25px;
+  border-radius: 3px;
+}
+
+/* SIDEBAR */
+
+.main{
+  display: flex;
+}
+
+.sideBar{
+/* min-width: 300px; */
+background-color:#f7f7efd9;
+height: auto;
+}
+
+.innerSidebar{
+  margin: 0 4rem;
+}
+
+#filter{
+margin: 2rem 0;
+}
+
+.filterDropdowns{
+width: 180px;
+margin-bottom: 1rem;
+}
+
+.neighbourhood, .propertyType, .bedrooms{
+  width: 180px;
+  padding: 5px 5px;
+  border: 1px solid rgba(214, 210, 210, 0.64);
+  background-color:#F7F7EF;
+}
+
+.sliderContainer{
+  width: 180px;
+}
+
+.eachSlider{
+  margin: 2rem 0 5rem 0;
+
+}
+
+.slider {
+  cursor: pointer;
+  width: 100%;
+  background-color: blue;
+  margin: 1rem 0;
+}
+
+.track {
+  /* background-color: var(--gray); */
+  height: 2px;
+  background-color: rgba(214, 210, 210, 0.64);
+}
+
+.track:nth-child(2) {
+  /* background-color: var(--char-coal); */
+  background-color: rgb(249, 156, 172);
+}
+
+.thumb {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 2px solid rgb(243, 237, 237);
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: -5px;
+}
+
+.sliderValues{
+  
+}
+
+#minValue{
+  float: left;
+  margin: 0.5rem 0;
+  }
+
+#maxValue{
+float: right;
+margin: 0.5rem 0;
+}
+
+/* CHECKBOXES */
+
+.formBoxes{
+width: 180px;
+padding-bottom: 10px;
+border-bottom: 2px solid rgba(214, 210, 210, 0.64);
+margin: 1rem 0;
+}
+
+#wordBoxes{
+
+}
+
+
+#boxes{
+float: right;
+}
+
+.checkBox{
+  width: 18px;
+  height: 18px;
+
+}
+
+input[type=checkbox]{
+
+}
+
+/* HERO SECTIONS */
+
+.heroSection {
+  display: grid;
+  justify-content: space-between;
+  margin: 2rem 3rem;
+  width: 49rem;
+  height: 100%;
+  background-color: white;
+}
+
+
+/* .heroSectionTitle{
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem 8rem 2rem 2rem;
+} */
+
+.heroSectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.searchBar > input {
+  width: 23rem;
+  font-size: 2rem;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.137);
+  outline: none;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.searchBar > input::placeholder {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.selectLocation{
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.137);
+  cursor: pointer;
+}
+
+.location {
+  display: flex;
+  align-items: self-end;
+}
+
+/* Beg heroSectionStats */
+
+.numberResults{
+  color: rgba(128, 128, 128, 0.378);
+}
+
+.heroSectionStats{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sortSection{
+display:flex;
+align-items: center;
+}
+
+.sortBoxContainer{
+  width: 100%;
+  padding: 5px;
+  border: 1px solid rgba(149, 157, 165, 0.2);
+  cursor: pointer;
+}
+
+.AiOutlineUnorderedList{
+  margin: 0 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.AiOutlineUnorderedListGrey{
+color: rgba(128, 128, 128, 0.237);
+margin: 0 15px;
+font-size: 1.2rem;
+cursor: pointer;
+}
+
+.BsFillGrid3X3GapFill{
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.BsFillGrid3X3GapFillGrey{
+color: rgba(128, 128, 128, 0.237);
+font-size: 1.2rem;
+cursor: pointer;
+}
+
+
+/* totalPropertyInfo */
+
+.totalPropertyInfoContainer{
+  margin-top: 3rem;
+
+}
+
+.totalPropertyInfo{
+  grid-gap: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+
+.eachProp{
+  width: 18rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 5px;
+}
+
+.eachPropImage{
+  position: relative;
+}
+
+.propertyImage{
+width: 18rem;
+height: 12rem;
+border-radius: 5px 5px 0 0;
+}
+
+.eachPropPropName{
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hoverCardContainer{
+  width: 18rem;
+  height: 12rem;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f7f7ef00; 
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+  background: linear-gradient(153deg, rgb(129, 8, 242) 7%, rgba(103, 30, 172, 0.823) 43%, rgba(193, 32, 169, 0.785) 90%); 
+  
+}
+
+.hoverCardContainer:hover{
+  opacity: 1;
+  width: 18rem;
+  height: 12rem;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f7f7efcf;
+  background: linear-gradient(153deg, rgb(129, 8, 242) 7%, rgba(103, 30, 172, 0.823) 43%, rgba(193, 32, 169, 0.785) 90%); 
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.hoverCardInfo{
+  padding: 20px 0;
+}
+
+#hoverCardName{
+  color: white;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.hoverCardInfoStats{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+}
+
+.statsValue{
+  display: flex;
+  align-items: center;
+}
+
+.statsValueIcons{
+margin-right: 5px;
+}
+
+.eachPropInfo{
+  padding: 7px 20px 12px;
+  font-size: 14px;
+}
+
+.eachPropInfoPrice{
+padding-bottom: 10px;
+font-weight: 600;
+font-size: 14px;
+}
+
+.eachPropInfoLocation{
+color:rgba(128, 128, 128, 0.378);
+font-weight:500;
+font-size: 12px;
+}
+
+/* Page-Counter */
+
+.pageCounter{
+  display: flex;
+  justify-content: center;
+  margin: 6% 0 3%;
+}
+
+.pageCounterContainer{
+  display: flex;
+  padding: 15px;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.pageCounterStart{
+  margin: 0px 30px;
+  color: rgb(70, 159, 255);
+  cursor: pointer;
+}
+
+.pageCounterCenter{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.pageCounterCenterNumbersActive{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50% 50%;
+  color: white;
+  background-color: rgb(255, 120, 152);
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.pageCounterCenterNumbersNotActive{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50% 50%;
+  color: black;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.pageCounterEnd{
+  margin: 0px 30px;
+  color: rgb(70, 159, 255);
+  cursor: pointer;
+}
+
+
+/* Footer Section*/
+.footer{
+  display: flex;
+  height: 250px;
+  background-color: rgb(1, 1, 56);
+  color: white;
+  padding-top: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerDownloadApp{
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+.MdOutlinePhoneIphone{
+  font-size: 200px;
+}
+
+.footerDownloadAppInfo{
+ display: flex;
+ flex-direction: column;
+ height: 200px;
+ 
+}
+
+#footer-h4{
+font-size: 1.5rem;
+font-weight: 400;
+}
+
+#footer-p-info{
+  color: #f7f7ef84;
+  margin: 10px 0 20px 0;
+}
+
+.appBtns{
+display: flex;
+}
+
+.IoLogoGooglePlaystore{
+color:white;
+font-size: 1.2rem;
+margin-right: 5px;
+}
+
+#googleBtn{
+color: white;
+background-color: rgb(255, 120, 152);
+padding: 12px 25px;
+border-radius: 5px;
+margin-right: 5%;
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+
+.FaApple{
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+
+#appleBtn{
+  background-color: rgb(255, 120, 152);
+  color: white; 
+  padding: 12px 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footerIcons{
+margin: 20px 0;
+}
+
+.twitterIcon{
+background-color: rgb(61, 182, 248);
+font-size: 2rem ;
+padding: 5px;
+border-radius: 50%;
+margin-left: 10px ;
+cursor: pointer;
+}
+
+.facebookIcon{
+  background-color: rgb(0, 128, 255);
+  font-size: 2rem ;
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 10px ;
+  cursor: pointer;
+  }
+  
+
+.footerInfo{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  font-size: 0.8rem;
+}
+
+.tenants{
+margin-right: 20px;
+}
+
+.advertisers{
+  margin-left: 20px;
+}
+
+.listHeaders{
+  font-weight: 500;
+  margin: 10px 0 15px 0;
+}
+
+.footerList{
+display: flex;
+flex-direction: column;
+color: #f7f7ef84;
+gap: 0.5rem;
+}
+
+.copyright{
+  background-color: rgb(1, 1, 56);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  color: #f7f7ef84;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+
