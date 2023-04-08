@@ -1,20 +1,19 @@
-import logo from './logo.svg';
 import PropertyCard from './propertyCard';
 import Pagination from './pagination';
 import './App.css';
 import './listStyle.css';
+import './mobResponsive.css';
 import ReactSlider from 'react-slider';
-import { useState, useEffect } from 'react';  
-import AddProperty from './addProperty';
+import { useState, useEffect, useRef } from 'react'; 
 import {MdOutlinePhoneIphone} from 'react-icons/md';
 import {IoLogoGooglePlaystore} from 'react-icons/io5';
 import {FaApple} from 'react-icons/fa';
 import {FaTwitter,FaFacebookF} from 'react-icons/fa';
 import {BsFillGrid3X3GapFill} from 'react-icons/bs';
-import {AiOutlineUnorderedList, AiTwotoneAlert} from 'react-icons/ai';
+import {FiFilter} from 'react-icons/fi';
+import {AiOutlineUnorderedList} from 'react-icons/ai';
 import addProperty from './addProperty';
 
-//cud do aternary so if totalproperrties.id < 55 ? gime this : or this 
 
 function App() {
 
@@ -22,31 +21,58 @@ function App() {
   const [max, setMax] = useState(3000);
 
   const [totalProperties, setTotalProperties] = useState (addProperty)
+  const [propertiesList, setPropertiesList] = useState(addProperty)
 
   const [gridCard, setGridCard]= useState(true)
 
   const [currentPage, setCurrentPage]= useState(1)
   const [postsPerPage, setPostsPerPage]= useState(6)
-
   const [searchValue, setSearchValue]= useState("")
+  const [filterMenu, setFilterMenu]= useState(false)
+  let filterSection = useRef(null)
+  const [pageResults, setPageResults]= useState(addProperty)
+
+  function goToFilterSection (){
+    window.scrollTo({
+    top: filterSection.current.offsetTop
+    })
+  }
 
   useEffect(() => {
     priceFilter()
-       }, [min,max]);  
-
+    console.log("min/max run")
+    }, [min,max]);
+       
   useEffect(() => {
-   postsSet()
-    }, [searchValue] );
+    if(searchValue===""){
+      setPageResults(propertiesList)
+      console.log("search value run")
+      postsSet()
+      priceFilter()   
+    }
+  }, [searchValue]);
+
+    useEffect( () => {
+      postsSet()
+      console.log("current page run")
+    }, [currentPage])
 
   function postsSet(){
     const lastPostIndex= currentPage * postsPerPage
     const firstPostIndex= lastPostIndex - postsPerPage
-    let totalPropertiesPaginate= totalProperties.slice(firstPostIndex, lastPostIndex)
+    let totalPropertiesPaginate= propertiesList.slice(firstPostIndex, lastPostIndex)
+    console.log("TPPaginate",totalPropertiesPaginate)
     setTotalProperties(totalPropertiesPaginate)
-    }
+  }
 
   function priceFilter(){
-    let tempTotalProperty= addProperty.map ((property) =>{
+
+    if(!{min} && !{max}){
+      postsSet();
+      return;
+    }
+
+    let tempTotalProperty= propertiesList.map ((property) =>{
       return (min>property.propPrice || max<property.propPrice ) ? {...property, show: false } : {...property, show:true}
         })
         tempTotalProperty= tempTotalProperty.filter((property) => {
@@ -54,8 +80,12 @@ function App() {
             return property
           }
         })
-        setTotalProperties(tempTotalProperty)    
-    }
+        console.log("tempInPrice:",tempTotalProperty)
+        console.log("totalPropPrice:",totalProperties)
+        setTotalProperties(tempTotalProperty) 
+        setPageResults(tempTotalProperty)
+           
+    } 
 
   function thumbFunc(){
     setSearchValue("")
@@ -65,7 +95,12 @@ function App() {
     let search= e.target.value.toLowerCase()
     setSearchValue(search)
 
-    let tempTotalProperty= addProperty.map ((property) =>{
+    if(!search){
+      postsSet();
+      return;
+    }
+
+    let tempTotalProperty= propertiesList.map ((property) =>{
       return (min>property.propPrice || max<property.propPrice ) ? {...property, show: false } : {...property, show:true}
         })
 
@@ -74,15 +109,18 @@ function App() {
             return property
           }
         })
-
-        setTotalProperties(tempTotalProperty)    
-    // let filteredSearchProp= addProperty.filter((prop) => {
-    //   if (prop.propLocation.toLowerCase().includes(search)){
-    //     return prop
-    //   }
-    // }) 
-    // setTotalProperties(filteredSearchProp)
+        console.log("temp:",tempTotalProperty)
+        console.log("totalProp:",totalProperties)
+        console.log("mainsearch run")
+        console.log(e.target.value)
+        console.log(e.target.value)
+        // console.log(propertiesList)
+        setPageResults(tempTotalProperty)
+        setTotalProperties(tempTotalProperty)
   }
+
+  console.log(searchValue)
+console.log("TP OUTSIDE",totalProperties)
 
     function selectOnChange(e){
       if (e.target.value === "Price Descending"){
@@ -131,7 +169,6 @@ function App() {
   
   return (
 <div className='container'>
-
   {/* NAVBAR SECTION */}
   <div className='navBar'>
 
@@ -152,9 +189,16 @@ function App() {
     </div>
   </div>  {/* END OF NAVBAR SECTION */}
 
+    {/* Filter Menu */}
+    <div style={{position:"relative"}} onClick={goToFilterSection}>
+      <FiFilter className={filterMenu ? 'filterMenuOpen' : "filterMenuOpenDisabled" }   
+      onClick={() => setFilterMenu(!filterMenu) } 
+      />
+    </div>
+
   {/* MAIN SECTION */}
   <div className='main'>
-    <div className='sideBar'>
+    <div className={filterMenu ? 'sideBar' : "sideBarDisabled"} ref={filterSection}>
       <div className='innerSidebar'>
         <form>
           <h4 id='filter'>FILTER</h4>
@@ -217,7 +261,7 @@ function App() {
           </div>
         </div>
 
-        <div><p>Facilities</p></div>
+        <div className='facilities'><p>Facilities</p></div>
 
         <div className="formBoxes">
           <span id='wordBoxes'><label htmlFor="elevator">Elevator</label></span>
@@ -297,6 +341,13 @@ function App() {
 
 <div className={ gridCard ? 'heroSection' : "heroSectionList"}>
 
+    {/* Filter Menu */}
+    <div style={{position:"relative"}} onClick={goToFilterSection}>
+    <FiFilter className={filterMenu ? 'filterMenuCloseDisabled' : "filterMenuClose" }  
+    onClick={() => setFilterMenu(!filterMenu) } 
+    />
+    </div>
+
     <div className='heroSectionTitle'> {/* Beginning of Hero Title */}
         <div className='searchBar'>
           <input type="text" value={searchValue} onChange={(e) => mainSearch (e)} placeholder="Search City"/>
@@ -306,7 +357,7 @@ function App() {
     <div className='heroSectionStats'>
       
       <div className='numberResults'>
-        <p>{totalProperties.length} results found</p>
+        <p>{pageResults.length} results found</p>
       </div>
 
       <div className='sortSection'>
@@ -328,7 +379,7 @@ function App() {
     <div className='totalPropertyInfoContainer'> {/* Beginning of propertyInfo */}
 
         <div className={ gridCard ? 'totalPropertyInfo' : "totalPropertyInfoList"}>
-          {totalPropertyInfo }
+          {totalPropertyInfo}
         </div>
 
     </div> {/* End of propertyInfo */}
@@ -353,11 +404,12 @@ function App() {
   </div> {/*End of Main section*/}
 
   {/* FOOTER SECTION */}
+<div style={{ backgroundColor:"rgb(1, 1, 56)"}}>
   <div className='footer'>
       <div className='footerDownloadApp'>
         <div><MdOutlinePhoneIphone className='MdOutlinePhoneIphone' /></div>
         <div className='footerDownloadAppInfo'>
-          <h4 id='footer-h4'>Download Prime Locaiton App</h4>
+          <h4 id='footer-h4'>Download Prime Location App</h4>
           <p id='footer-p-info'>Use our app to have 11,298 rental properties at hand</p>
           <div className='appBtns'>
               <button id='googleBtn'><IoLogoGooglePlaystore className='IoLogoGooglePlaystore' /> Playstore </button>
@@ -390,7 +442,7 @@ function App() {
           </div>
       </div>
   </div> {/*End of Footer */}
-
+</div>
   
   <div className='copyright'><p>© Bilal Musa 2023</p></div>
 

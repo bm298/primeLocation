@@ -1,0 +1,425 @@
+.filterMenuClose, .filterMenuCloseDisabled, .filterMenuOpen, .filterMenuOpenDisabled{
+    display: none;
+}
+
+@media (max-width: 1350px ){
+
+    .totalPropertyInfo{
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 1050px ){
+
+    .navContents {
+        margin: 0 4rem 0 2rem;
+    }
+    
+    .innerSidebar {
+        margin: 0 2rem;
+    }
+
+    .totalPropertyInfo{
+        grid-gap: 1.5rem;
+    }
+
+    .eachProp, .propertyImage,.hoverCardContainer,.hoverCardContainer:hover {
+        width: 16rem;
+    }
+    
+}
+
+@media (max-width: 850px ){
+
+*{
+box-sizing: border-box;
+}
+
+.container{
+display: grid;
+}
+
+.navBar{
+}
+
+.navContents{
+    margin: 0;
+    justify-content: center;
+}
+
+#logo > h3 {
+    font-size: 2rem;
+    
+}
+
+.navItems{
+    display: none;
+}
+
+.main{
+    display: grid;
+    width: 100%;
+}
+
+/* Innersidebar Section */
+
+.filterMenuOpen{
+    border: 2px solid rgb(1, 1, 56);;
+    cursor: pointer;
+    display: flex;
+    font-size: 2.5rem;
+    right:3rem;
+    top:3rem;
+    padding: 2px;
+    position: absolute;
+    z-index: 2;
+     color: white; 
+    background-color: rgb(1, 1, 56);
+    border-radius: 5px;
+}
+
+.filterMenuOpenDisabled{
+display: none;
+}
+
+.filterMenuClose {
+    border: 2px solid rgb(1, 1, 56);;
+    cursor: pointer;
+    display: flex;
+    font-size: 2.5rem;
+    right:0rem;
+    top:1rem;
+    padding: 2px;
+    position: absolute;
+    z-index: 2;
+     color: white; 
+    background-color: rgb(1, 1, 56);
+    border-radius: 5px;
+}
+
+.filterMenuCloseDisabled{
+display: none;
+}
+
+.sideBar{
+    /* height: 100vh; */
+}
+
+.sideBarDisabled{
+    display: none;
+}
+
+.innerSidebar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#filter{
+    font-size: 1.5rem;
+}
+
+.neighbourhood, .propertyType, .bedrooms {
+    font-size: 1.1rem;
+    width: 230px;
+}
+
+.neighbourhood > option, .propertyType > option, .bedrooms > option {
+    font-size: 1.5rem;
+}
+
+.eachSlider > p {
+font-size: 1.5rem;
+font-weight: 600;
+}
+
+.slider{
+    width: 230px;
+}
+
+.sliderValues{
+margin-bottom: 2rem;
+width: 230px;
+}
+
+.track{
+height: 3px;
+}
+
+.thumb {
+ width: 1.5rem;
+ height: 1.5rem;
+ line-height: 1.5rem;
+ top: -10px;
+}
+
+#minValue{
+font-size: 1.1rem;
+margin: 1.5rem 0 0 0;
+}
+
+#maxValue{
+font-size: 1.1rem;
+margin: 1.5rem 0;
+}
+
+.facilities{
+    margin: 7rem 0 2rem 0
+}
+
+.facilities > p{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.formBoxes{
+width: 230px;
+}
+
+
+label{
+    font-size: 1.1rem;
+}
+
+.checkBox {
+    width: 15px;
+    height: 15px;
+}
+
+/* MAIN PROPERTY SECTION */
+
+.numberResults > P{
+font-size: 1.2rem;
+}
+
+.sortBoxContainer {
+    font-size: 1rem;
+}
+
+.sortBoxContainer > option {
+    /* font-size: 0.6rem; */
+}
+
+.AiOutlineUnorderedList > svg{
+    height: 2rem;
+    width: 2rem;
+}
+
+.BsFillGrid3X3GapFillGrey > svg{
+    height: 2rem;
+    width: 2rem;
+}
+
+/* PROPERTIES */
+.totalPropertyInfo {
+    grid-gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.heroSection{
+    justify-content: center;
+}
+
+.eachPropImage > p{
+font-size: 1.1rem;
+}
+
+.eachPropInfoLocation > svg{
+    height: 1rem;
+    width: 1rem;
+}
+
+.hoverCardInfo {
+    padding: 10px 0;
+}
+
+.hoverCardInfoStats {
+    gap: 0.5rem;
+}
+
+.hoverCardInfo > p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.statsValue, .statsValue > svg{
+    font-size: 0.8rem;
+}
+
+.pageCounter{
+padding-bottom: 30px;
+}
+
+/* End of Properties Section  */
+
+/* Begining of list property section */
+.BsFillGrid3X3GapFill > svg {
+    height: 2rem;
+    width: 2rem;
+}
+
+.AiOutlineUnorderedListGrey > svg {
+    height: 2rem;
+    width: 2rem;
+}
+
+.heroSectionList {
+    margin: 2rem;
+    max-width: 40rem;
+}
+
+.eachPropList {
+    max-width: 40rem;
+    padding: 0rem;
+}
+
+.eachPropPropNameList {
+font-size: 1.3rem;
+}
+
+.propertyImageList {
+    margin-right: 0.5rem;
+    width: 15rem;
+    height: 10rem;
+}
+
+.eachPropInfoList {
+/* margin: auto 0rem auto 2rem; */
+}
+
+.eachPropInfoPrice{
+}
+
+.eachPropInfoLocationList > svg{
+   
+   display: flex;
+}
+
+.eachPropInfoLocationList {
+    display: flex;
+}
+
+/* End of list property section */
+
+
+.pageCounterContainer{
+padding:5px
+}
+
+.pageCounterStart > p {
+    font-size: 1.2rem;
+}
+
+.pageCounterCenterNumbersActive {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.pageCounterCenterNumbersNotActive{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.pageCounterEnd {
+    font-size: 1.2rem;
+}
+
+/* FOOTER */
+
+.footer{
+padding: 30px;
+height: auto;
+}
+
+.footerDownloadApp {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+}
+
+.footerDownloadAppInfo {
+    height: auto;
+}
+
+.MdOutlinePhoneIphone {
+    font-size: 50px;
+    display: none;
+}
+
+#footer-h4 {
+font-size: 1.1rem;
+}
+
+#footer-p-info {
+    margin: 10px 0;
+    font-size: 0.8rem;
+}
+
+#googleBtn {
+padding: 5px 10px;
+font-size: 0.8rem;
+}
+
+#googleBtn > svg{
+font-size: 1.2rem;
+}
+
+#appleBtn {
+padding: 5px 10px;
+font-size: 0.8rem;
+}
+
+#appleBtn > svg{
+font-size: 1.2rem;
+}
+
+.footerIcons {
+    margin: 15px 0;
+}
+
+.facebookIcon {
+margin-right: 10px;
+font-size: 2rem;
+}
+
+.twitterIcon {
+font-size: 2rem;
+}
+
+.footerInfo {
+    justify-content: end;
+}
+
+.tenants {
+margin-right: 0;
+}
+
+.listHeaders{
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.footerList > li{
+margin: 0.2rem 0;
+}
+
+.footerList > li > a{
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.copyright{
+    font-size: 0.7rem;
+}
+
+}

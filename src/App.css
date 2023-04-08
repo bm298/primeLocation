@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 img{
@@ -25,6 +24,7 @@ img{
   display: flex;
   align-items: center;
   margin: 0 8rem 0 4rem;
+  max-width: 1600px;
   justify-content: space-between;
 }
 
@@ -55,6 +55,11 @@ a{
   border-radius: 3px;
 }
 
+/* FILTER ICON */
+.filterMenu {
+  display: none;
+}
+
 /* SIDEBAR */
 
 .main{
@@ -62,10 +67,14 @@ a{
 }
 
 .sideBar{
-/* min-width: 300px; */
 background-color:#f7f7efd9;
 height: auto;
 }
+
+.sideBarDisabled{
+  background-color:#f7f7efd9;
+  height: auto;
+  }
 
 .innerSidebar{
   margin: 0 4rem;
@@ -152,7 +161,6 @@ margin: 1rem 0;
 
 }
 
-
 #boxes{
 float: right;
 }
@@ -173,7 +181,7 @@ input[type=checkbox]{
   display: grid;
   justify-content: space-between;
   margin: 2rem 3rem;
-  width: 49rem;
+  /* width: 49rem; */
   height: 100%;
   background-color: white;
 }
@@ -302,7 +310,7 @@ border-radius: 5px 5px 0 0;
   bottom: 12px;
   left: 20px;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -409,6 +417,7 @@ font-size: 12px;
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .pageCounterCenterNumbersActive{
@@ -451,12 +460,11 @@ font-size: 12px;
 .footer{
   display: flex;
   height: 250px;
-  background-color: rgb(1, 1, 56);
   color: white;
   padding-top: 20px;
   position: relative;
   bottom: 0;
-  width: 100%;
+  max-width:1600px;
 }
 
 .footerDownloadApp{
@@ -585,4 +593,6 @@ gap: 0.5rem;
   bottom: 0;
 }
 
+
+/* mobile 1000px  */
 

@@ -1,5 +1,4 @@
 import React from "react"
-import addProperty from "./addProperty";
 import './App.css';
 
 export default function pagination(props){
