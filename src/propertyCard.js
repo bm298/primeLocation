@@ -13,7 +13,8 @@ export default function propertyCard(props) {
     return(
         <div className={props.gridCard ? "eachProp" : "eachPropList"} key={props.propKey}>
             <div className={ props.gridCard ? 'eachPropImage' : 'eachPropImageList'}>
-                <img src={`../propImages/${props.propPic}`} className= {props.gridCard ? "propertyImage" : "propertyImageList"} ></img>
+                {/* to run locally change to ../propImages */}
+                <img src={`propImages/${props.propPic}`} className= {props.gridCard ? "propertyImage" : "propertyImageList"} ></img>
                 <p className={ props.gridCard ? "eachPropPropName" : "eachPropPropNameList"}>{props.propName}</p>
             
             <div className={props.gridCard ? "hoverCardContainer" : "hoverCardContainerList"}>
