@@ -168,6 +168,7 @@ console.log("TP OUTSIDE",totalProperties)
     })   
   
   return (
+
 <div className='container'>
   {/* NAVBAR SECTION */}
   <div className='navBar'>
